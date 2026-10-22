@@ -3,6 +3,7 @@ from google.adk.agents import Agent
 
 from ..tools.writing_tools import count_words, check_seo_lengths
 from ..model_config import get_model
+from ..tools.run_files import write_run_file, read_run_file
 
 
 SKILL_PATH = Path(__file__).resolve().parents[1] / "skills" / "writing.md"
@@ -23,5 +24,5 @@ writer = Agent(
     Write clear, accurate, well-structured content.
     Never invent facts or citations.
     """,
-    tools=[count_words, check_seo_lengths]
+    tools=[count_words, check_seo_lengths, write_run_file, read_run_file]
 )

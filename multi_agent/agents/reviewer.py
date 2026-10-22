@@ -5,6 +5,7 @@ from ..tools.review_tools import readability_score, similarity_check, check_link
 from ..tools.writing_tools import check_seo_lengths
 from ..model_config import get_model
 from ..tools.google_search import web_search
+from ..tools.run_files import write_run_file, read_run_file
 
 
 SKILL_PATH = Path(__file__).resolve().parents[1] / "skills" / "reviewing.md"
@@ -26,5 +27,5 @@ reviewer = Agent(
     Return specific corrections and an approval status.
     Do not claim that facts were verified unless evidence supports it.
     """,
-    tools=[web_search, readability_score, similarity_check, check_links, check_seo_lengths]
+    tools=[web_search, readability_score, similarity_check, check_links, check_seo_lengths, write_run_file, read_run_file]
 )

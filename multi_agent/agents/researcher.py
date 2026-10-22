@@ -5,6 +5,7 @@ from google.adk.agents import Agent
 from ..tools.google_search import web_search
 from ..tools.research_tools import load_web_page
 from ..model_config import get_model
+from ..tools.run_files import write_run_file, read_run_file
 
 
 skill_path = Path(__file__).parents[1] / "skills" / "research.md"
@@ -26,5 +27,5 @@ researcher = Agent(
         supporting sources where available, and an outline.
         Never invent sources.
     """,
-    tools=[web_search, load_web_page]
+    tools=[web_search, load_web_page, write_run_file]
 )

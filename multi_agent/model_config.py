@@ -4,8 +4,11 @@ import os
 
 load_dotenv()
 
+model = "nvidia/nemotron-3-ultra-550b-a55b:free"
+# model = "minimax/minimax-m3.1-flash:free"
+
 def get_model():
     return LiteLlm(
-        model="nvidia_nim/deepseek-ai/deepseek-v4.1-flash",
-        api_key=os.getenv("NVIDIA_NIM_API_KEY"),
+        model= f"openrouter/{model}",
+        api_key=os.getenv("OPENROUTER_API_KEY"),
     )
