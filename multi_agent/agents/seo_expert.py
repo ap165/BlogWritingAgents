@@ -4,6 +4,7 @@ from google.adk.agents import Agent
 
 from ..model_config import get_model
 from ..tools.web_search import web_search
+from ..tools.web_crawler import crawl_url
 from ..tools.writing_tools import check_seo_lengths
 from ..tools.run_files import write_run_file, read_run_file
 
@@ -46,5 +47,6 @@ seo_expert = Agent(
         check_seo_lengths,
         write_run_file,
         read_run_file,
+        crawl_url
     ]
 )

@@ -1,9 +1,8 @@
 from pathlib import Path
 from google.adk.agents import Agent
-# from google.adk.tools import google_search
-
 from ..tools.web_search import web_search
-from ..tools.web_crawler import load_web_page
+from ..tools.web_crawler import crawl_url
+from ..tools.search_reddit import search_reddit, fetch_reddit_comments
 from ..model_config import get_model
 from ..tools.run_files import write_run_file, read_run_file
 
@@ -27,5 +26,5 @@ researcher = Agent(
         supporting sources where available, and an outline.
         Never invent sources.
     """,
-    tools=[web_search, load_web_page, write_run_file]
+    tools=[web_search, crawl_url, write_run_file, read_run_file, search_reddit, fetch_reddit_comments]
 )

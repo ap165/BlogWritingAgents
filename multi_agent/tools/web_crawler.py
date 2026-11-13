@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 api_key = os.getenv("CRAWL_4_WEB_KEY")
 
-def load_web_page(url: str) -> dict:
+def crawl_url(url: str) -> dict:
     """Fetch a public web page"""
     headers = {
         "Authorization": f"Bearer {api_key}",

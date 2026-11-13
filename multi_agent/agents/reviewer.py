@@ -5,6 +5,7 @@ from ..tools.review_tools import readability_score, similarity_check, check_link
 from ..tools.writing_tools import check_seo_lengths
 from ..model_config import get_model
 from ..tools.web_search import web_search
+from ..tools.web_crawler import crawl_url
 from ..tools.run_files import write_run_file, read_run_file
 
 
@@ -27,5 +28,5 @@ reviewer = Agent(
     Return specific corrections and an approval status.
     Do not claim that facts were verified unless evidence supports it.
     """,
-    tools=[web_search, readability_score, similarity_check, check_links, check_seo_lengths, write_run_file, read_run_file]
+    tools=[web_search, readability_score, similarity_check, check_links, check_seo_lengths, write_run_file, read_run_file, crawl_url]
 )
