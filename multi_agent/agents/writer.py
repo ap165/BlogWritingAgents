@@ -39,7 +39,7 @@ entertainment_writer = Agent(
     # model="gemini-3.5-flash-lite",
     description="Writes content using research findings.",
     instruction=f"""
-    You are the entertainment(Anime, Movies, TV shows etc.) writing specialist.
+    You are the entertainment(Anime, Movies, TV shows, Games etc.) writing specialist.
 
     Follow these skill instructions:
     {ENT_SKILL}

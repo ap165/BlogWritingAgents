@@ -4,7 +4,8 @@ import os
 
 load_dotenv()
 
-model = "nvidia/nemotron-3-ultra-550b-a55b:free"
+model = "nvidia/nemotron-3.5-super-vl:free"
+# model = "nvidia/nemotron-3-ultra-550b-a55b:free"
 # model = "minimax/minimax-m3.1-flash:free"
 
 def get_model():

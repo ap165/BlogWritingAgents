@@ -4,7 +4,7 @@ from google.adk.agents import Agent
 from ..tools.review_tools import readability_score, similarity_check, check_links
 from ..tools.writing_tools import check_seo_lengths
 from ..model_config import get_model
-from ..tools.google_search import web_search
+from ..tools.web_search import web_search
 from ..tools.run_files import write_run_file, read_run_file
 
 
