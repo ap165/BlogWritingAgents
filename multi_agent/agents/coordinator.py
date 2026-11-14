@@ -5,6 +5,8 @@ from google.adk.tools.agent_tool import AgentTool
 from .researcher import researcher
 from .writer import writer
 from .reviewer import reviewer
+from .seo_expert import seo_expert
+
 # from ..tools.publishing_tools import save_draft
 from ..tools.run_files import save_final_draft, start_run
 from ..model_config import get_model
@@ -38,6 +40,7 @@ coordinator = Agent(
         AgentTool(agent=researcher),
         AgentTool(agent=writer),
         AgentTool(agent=reviewer),
+        AgentTool(agent=seo_expert),
         save_final_draft,
         start_run
     ],

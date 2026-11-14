@@ -2,7 +2,7 @@ from google.adk.agents import Agent
 from ..model_config import get_model
 from pathlib import Path
 from ..tools.web_search import web_search
-from ..tools.web_crawler import load_web_page
+from ..tools.web_crawler import crawl_url
 from ..tools.get_google_trends import get_trends
 from ..tools.google_news import search_news
 from ..tools.search_reddit import search_reddit, fetch_reddit_comments
@@ -22,9 +22,9 @@ trendAnalyzer = Agent(
         Follow these skill instructions:
         {skill}
 
-        Use `get_trends`, `get_rss_feed`, `search_news`, `search_reddit`, `web_search`, `fetch_reddit_comments`, and `load_web_page` to discover and verify trending topics (defaulting to 20 across all categories if unspecified).
+        Use `get_trends`, `get_rss_feed`, `search_news`, `search_reddit`, `web_search`, `fetch_reddit_comments`, and `crawl_url` to discover and verify trending topics (defaulting to 20 across all categories if unspecified).
 
         Return write-ready pitches for blog articles, business case studies, news, or reviews (movies, TV, anime, games) with verified catalysts, community sentiment, a structured outline, and real source URLs. Never invent facts or sources.
     """,
-    tools=[get_trends, get_rss_feed, search_news, search_reddit, web_search, load_web_page, fetch_reddit_comments]
+    tools=[get_trends, get_rss_feed, search_news, search_reddit, web_search, crawl_url, fetch_reddit_comments]
 )
